@@ -1,0 +1,39 @@
+              <h2>Crear publicación</h2>
+              <form [formGroup]="publicationForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                      <label>Título</label>
+                      <input type="text" formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                      <div class="error"
+                        *ngIf="publicationForm.get('title').hasError('required') && publicationForm.get('title').touched">
+                        El título de la publicación es obligatorio
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Publicación</label>
+                      <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                      <div class="error"
+                        *ngIf="publicationForm.get('description').hasError('required') && publicationForm.get('description').touched">
+                        El texto de la publicación es obligatorio
+                      </div>
+                  </div>
+
+
+                  <select class="form-group" id="billboard" formControlName="billboard">
+                    <option *ngFor="let billboard of billboards$"
+                      [ngValue]="billboard.id">{{billboard.nameBillboard}}
+                   </option>
+                 </select>
+
+
+
+                  <div class="form-group">
+                    <label>Hablilitar comentarios</label>
+
+                      <input type="radio" value=true formControlName="comments" >Si
+                      <input type="radio" value=false formControlName="comments">No
+
+                  </div>
+                  <div class="form-group">
+                      <button [disabled]="publicationForm.invalid" class="btn btn-primary">Crear publicación</button>
+                  </div>
+              </form>

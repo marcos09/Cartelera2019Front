@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {JwtHelper} from 'angular2-jwt';
 import { environment } from 'environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 
 
 @Injectable()

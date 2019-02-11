@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppDataService } from 'app/services/app-data.service';
-import { BillboardService } from 'app/services/billboard.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.billboards$ = this.billboardService.getBillboards();
-    this.profesors$ = this.appDataService.getUsersRoleProfesor();
+    this.profesors$ = this.appDataService.getProfesors();
 
   }
 

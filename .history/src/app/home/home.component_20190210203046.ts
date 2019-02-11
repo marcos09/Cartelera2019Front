@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.billboards$ = this.billboardService.getBillboards();
-    this.profesors$ = this.appDataService.getUsersRoleProfesor();
+    this.profesors$ = this.appDataService.getProfesors();
 
   }
 

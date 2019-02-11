@@ -1,9 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {Http, HttpModule} from '@angular/http';
 import {AuthConfig, AuthHttp} from 'angular2-jwt';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 
@@ -49,9 +48,7 @@ export function authHttpServiceFactory(http: Http) {
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule
+    AppRoutingModule
   ],
   providers: [
     {provide: AuthHttp, useFactory: authHttpServiceFactory, deps: [Http]},

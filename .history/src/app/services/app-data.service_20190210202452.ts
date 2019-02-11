@@ -21,9 +21,4 @@ export class AppDataService {
 
   }
 
-  getProfesors(): Observable<any> {
-    return this.http.get(environment.url + 'users/usersProfesor').map(res => res.json());
-  }
-
-
 }
