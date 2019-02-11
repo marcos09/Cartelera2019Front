@@ -51,8 +51,8 @@ export class BillboardService {
     return this.http.get(environment.url + 'billboards/list').map(res => res);
   }
 
-  getPublications(idBillboard): Observable<any>{
-    return this.http.get(environment.url + 'publications/billboard/' + idBillboard).map(res => res);
+  getPublications(): Observable<any>{
+    return this.http.get(environment.url + 'publications/billboard/' + 1).map(res => res);
   }
 
 }

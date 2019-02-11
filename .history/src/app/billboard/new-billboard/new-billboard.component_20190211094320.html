@@ -1,0 +1,55 @@
+<h2>
+Crear cartelera
+</h2>
+
+<form  [formGroup]="createBillboardForm" (ngSubmit)="onSubmit()">
+
+<div>
+  <label for="nameBillboard"> Nombre de la cartelera: </label>
+  <input formControlName="nameBillboard" placeholder="Nombre de la cartelera">
+</div>
+
+<label class="col-md-3 col-form-label" for="textarea-input">Agregar usuarios habilitados</label>
+
+<select class="form-group" id="billboard" formControlName="user">
+  <option *ngFor="let usuario of profesors$"
+    [ngValue]="usuario.id">{{usuario.username}}
+ </option>
+</select>
+<button (click)="addUser()">Agregar usuario</button>
+<p>Para ver los usuarios se requiere estar logueado como admin. Caso contrario no se ven</p>
+
+
+<!--
+
+  <select class="form-control" id="name" placeholder="Usuario X">
+      <option *ngFor="let usuario of profesors$"
+          [ngValue]="usuario">
+              {{usuario.username}}
+       </option>
+    </select>
+-->
+
+<div formArrayName="writeUsers"
+*ngFor="let item of createBillboardForm.get('writeUsers').controls; let i = index;">
+<div [formGroupName]="i">
+
+  <input formControlName="username" placeholder="Item name">
+  <input formControlName="firstname"  placeholder="Item description">
+  <input formControlName="lastname"  placeholder="Item price">
+  <button (click)="deleteUser(i)">Borrar usuario</button>
+</div>
+</div>
+
+<div class="form-group">
+<button class="btn btn-primary" type="submit">Crear cartelera</button>
+</div>
+
+</form>
+
+
+
+
+<p>JSON a enviar al backend</p>
+<pre>{{createBillboardForm.value | json}}</pre>
+

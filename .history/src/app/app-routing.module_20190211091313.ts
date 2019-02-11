@@ -9,7 +9,6 @@ import {AdminAuthGuard} from './guards/admin-auth-guard.service';
 import {HomeComponent} from './home/home.component';
 import {UserComponent} from './user/user.component';
 import { BillboardComponent } from './billboard/billboard.component';
-import { PublicationsComponent } from './publications/publications.component';
 
 const routes: Routes = [
   {
@@ -33,10 +32,6 @@ const routes: Routes = [
   {
     path: 'carteleras',
     component: BillboardComponent,
-  },
-  {
-    path: 'publicaciones',
-    component: PublicationsComponent,
   },
   {
     path: '**',

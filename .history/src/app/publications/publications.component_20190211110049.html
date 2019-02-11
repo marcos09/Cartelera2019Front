@@ -1,0 +1,5 @@
+<h4>Seleccione la cartelera de la que quiere ver las publicaciones</h4>
+
+<select [ngModel]="selectedDevice" (ngModelChange)="onChange($event)" name="sel2">
+    <option [value]="i" *ngFor="let i of devices">{{i}}</option>
+</select>

@@ -1,0 +1,19 @@
+<h4>Seleccione la cartelera de la que quiere ver las publicaciones</h4>
+
+<!--
+<select [(ngModel)]="billboard" (ngModelChange)="refreshPublications()" name="sel2">
+    <option [value]="billb" *ngFor="let billb of billboards">{{billb.nameBillboard}}</option>
+</select>
+-->
+
+<p>JSON recibido del backend</p>
+<pre>{{publications | json}}</pre>
+
+<form [formGroup]="billboardSelectForm">
+
+<select class="form-group" (ngModelChange)="refreshPublications()" id="billboard" formControlName="billboard">
+    <option *ngFor="let billb of billboards"
+      [ngValue]="billb.id">{{billb.nameBillboard}}
+   </option>
+ </select>
+</form>

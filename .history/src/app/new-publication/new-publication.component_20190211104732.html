@@ -10,7 +10,7 @@
                   </div>
                   <div class="form-group">
                       <label>Publicación</label>
-                      <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+                      <input type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
                       <div class="error"
                         *ngIf="publicationForm.get('description').hasError('required') && publicationForm.get('description').touched">
                         El texto de la publicación es obligatorio

@@ -19,11 +19,8 @@ import {AuthGuard} from './guards/auth-guard.service';
 import {AdminAuthGuard} from './guards/admin-auth-guard.service';
 import {AppDataService} from './services/app-data.service';
 import { environment } from 'environments/environment';
-import { NewBillboardComponent } from './billboard/new-billboard/new-billboard.component';
+import { NewBillboardComponent } from './new-billboard/new-billboard.component';
 import { BillboardService } from './services/billboard.service';
-import { BillboardComponent } from './billboard/billboard.component';
-import { UpdateBillboardComponent } from './billboard/update-billboard/update-billboard.component';
-import { PublicationsComponent } from './publications/publications.component';
 
 export function authHttpServiceFactory(http: Http) {
   return new AuthHttp(new AuthConfig({
@@ -45,9 +42,6 @@ export function authHttpServiceFactory(http: Http) {
     LoginComponent,
     NewBillboardComponent,
     NewPublicationComponent,
-    BillboardComponent,
-    UpdateBillboardComponent,
-    PublicationsComponent,
   ],
   imports: [
     BrowserModule,

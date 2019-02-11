@@ -22,13 +22,6 @@ export class BillboardService {
     return this.http.put(url, billboard, this.httpOptions);
   }
 
-  remove(billboard: Billboard) {
-    const url = environment.url + 'billboards/' + billboard.id;
-    this.httpOptions.headers.set('Content-Type', 'application/json');
-    return this.http.delete(url, this.httpOptions);
-
-  }
-
   addPublication(publication) {
     const url = environment.url + 'billboards/' + publication.billboard + '/addPublication';
     this.httpOptions.headers.set('Content-Type', 'application/json');
@@ -49,10 +42,6 @@ export class BillboardService {
 
   getBillboards(): Observable<any>{
     return this.http.get(environment.url + 'billboards/list').map(res => res);
-  }
-
-  getPublications(idBillboard): Observable<any>{
-    return this.http.get(environment.url + 'publications/billboard/' + idBillboard).map(res => res);
   }
 
 }
