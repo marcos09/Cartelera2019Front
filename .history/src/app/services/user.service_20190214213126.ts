@@ -46,7 +46,7 @@ export class UserService {
 
   }
 
-  getSubscriptions() {
+  getSubscriptions(): Observable<any> {
     return this.http.get(environment.url + 'users/subscriptions').map(res => res);
   }
 

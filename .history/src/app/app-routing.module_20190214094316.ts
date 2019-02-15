@@ -10,8 +10,6 @@ import {HomeComponent} from './home/home.component';
 import {UserComponent} from './user/user.component';
 import { BillboardComponent } from './billboard/billboard.component';
 import { PublicationsComponent } from './publications/publications.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
-import { BillboardSubscriptionComponent } from './billboard-subscription/billboard-subscription.component';
 
 const routes: Routes = [
   {
@@ -37,16 +35,12 @@ const routes: Routes = [
     component: BillboardComponent,
   },
   {
-    path: 'suscripcion',
-    component: BillboardSubscriptionComponent,
-  },
-  {
     path: 'publicaciones',
     component: PublicationsComponent,
   },
   {
     path: 'userDetails',
-    component: UserDetailsComponent,
+    component: PublicationsComponent,
     canActivate: [AuthGuard]
   },
 

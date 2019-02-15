@@ -15,20 +15,18 @@ export class BillboardService {
   };
 
   //Ex HttpClient
-  constructor(private http: HttpClient, private authHttp: AuthHttp) { }
+  constructor(private http: AuthHttp) { }
 
 
   create(billboard: Billboard) {
     const url = environment.url + 'billboards/create';
     this.httpOptions.headers.set('Content-Type', 'application/json');
-    // Incluia un tercer parámetro this.httpOptions
     return this.http.put(url, billboard, this.httpOptions);
   }
 
   remove(billboard: Billboard) {
     const url = environment.url + 'billboards/' + billboard.id;
     this.httpOptions.headers.set('Content-Type', 'application/json');
-    // Incluia un tercer parámetro this.httpOptions
     return this.http.delete(url, this.httpOptions);
 
   }
@@ -36,7 +34,6 @@ export class BillboardService {
   addPublication(publication) {
     const url = environment.url + 'billboards/' + publication.billboard + '/addPublication';
     this.httpOptions.headers.set('Content-Type', 'application/json');
-    // Incluia un tercer parámetro this.httpOptions
     return this.http.put(url, publication, this.httpOptions);
   }
 
@@ -58,18 +55,6 @@ export class BillboardService {
 
   getPublications(idBillboard): Observable<any>{
     return this.http.get(environment.url + 'publications/billboard/' + idBillboard).map(res => res);
-  }
-
-  subscribe(idBillboard: number): Observable<any> {
-
-    return this.authHttp.put(environment.url + 'billboards/' + idBillboard + '/subscribe', null );
-
-  }
-
-  unsubscribe(idBillboard: number): Observable<any> {
-
-    return this.authHttp.put(environment.url + 'billboards/' + idBillboard + '/unsubscribe', null );
-
   }
 
 }

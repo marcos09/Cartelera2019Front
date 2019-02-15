@@ -60,15 +60,15 @@ export class BillboardService {
     return this.http.get(environment.url + 'publications/billboard/' + idBillboard).map(res => res);
   }
 
-  subscribe(idBillboard: number): Observable<any> {
+  subscribe(idBillboard: number) {
 
-    return this.authHttp.put(environment.url + 'billboards/' + idBillboard + '/subscribe', null );
+    this.authHttp.put(environment.url + 'billboards/' + idBillboard + '/subscribe', null )
 
   }
 
-  unsubscribe(idBillboard: number): Observable<any> {
+  unsubscribe(idBillboard: number) {
 
-    return this.authHttp.put(environment.url + 'billboards/' + idBillboard + '/unsubscribe', null );
+    this.authHttp.put(environment.url + 'billboards/' + idBillboard + '/unsubscribe', null );
 
   }
 

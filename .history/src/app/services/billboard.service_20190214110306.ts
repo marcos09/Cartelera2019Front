@@ -15,7 +15,7 @@ export class BillboardService {
   };
 
   //Ex HttpClient
-  constructor(private http: HttpClient, private authHttp: AuthHttp) { }
+  constructor(private http: HttpClient) { }
 
 
   create(billboard: Billboard) {
@@ -58,18 +58,6 @@ export class BillboardService {
 
   getPublications(idBillboard): Observable<any>{
     return this.http.get(environment.url + 'publications/billboard/' + idBillboard).map(res => res);
-  }
-
-  subscribe(idBillboard: number): Observable<any> {
-
-    return this.authHttp.put(environment.url + 'billboards/' + idBillboard + '/subscribe', null );
-
-  }
-
-  unsubscribe(idBillboard: number): Observable<any> {
-
-    return this.authHttp.put(environment.url + 'billboards/' + idBillboard + '/unsubscribe', null );
-
   }
 
 }

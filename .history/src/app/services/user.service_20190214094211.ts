@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {JwtHelper, AuthHttp} from 'angular2-jwt';
+import {JwtHelper} from 'angular2-jwt';
 import { environment } from 'environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 
@@ -10,7 +11,7 @@ export class UserService {
   accessToken: string;
   isAdmin: boolean;
 
-  constructor(private http: AuthHttp) {
+  constructor(private http: HttpClient) {
   }
 
   login(accessToken: string) {
@@ -43,11 +44,6 @@ export class UserService {
 
   getCurrentUser(): Observable<any> {
     return this.http.get(environment.url + 'users/getCurrentUser').map(res => res);
-
-  }
-
-  getSubscriptions() {
-    return this.http.get(environment.url + 'users/subscriptions').map(res => res);
   }
 
 }
