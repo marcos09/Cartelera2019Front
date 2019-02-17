@@ -66,10 +66,4 @@ export class BillboardService {
 
   }
 
-  unsubscribe(idBillboard: number): Observable<any> {
-
-    return this.authHttp.put(environment.url + 'billboards/' + idBillboard + '/unsubscribe', null );
-
-  }
-
 }

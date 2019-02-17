@@ -6,7 +6,6 @@ import { BillboardService } from 'app/services/billboard.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
-
 export class HomeComponent implements OnInit {
   billboards$;
   profesors$;
@@ -19,5 +18,6 @@ export class HomeComponent implements OnInit {
     this.profesors$ = this.appDataService.getUsersRoleProfesor();
 
   }
+
 
 }

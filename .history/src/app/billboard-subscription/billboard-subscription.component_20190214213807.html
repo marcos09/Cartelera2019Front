@@ -1,0 +1,28 @@
+<h3>Carteleras adheridas</h3>
+<table class="table">
+    <tr>
+      <th>Nombre de la cartelera</th>
+      <th>Acciones</th>
+    </tr>
+      <tr *ngFor="let billboard of billboards">
+        <td>{{billboard.nameBillboard}}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="unsubscription(billboard.id)">Dejar de seguir</button>
+        </td>
+      </tr>
+  </table>
+
+<h3> Carteleras sin suscripcion </h3>
+<table class="table">
+    <tr>
+      <th>Nombre de la cartelera</th>
+      <th>Acciones</th>
+    </tr>
+
+      <tr *ngFor="let billboard of billboardsSubscribe">
+        <td>{{billboard.nameBillboard}}</td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="subscription(billboard.id)">Seguir cartelera</button>
+        </td>
+      </tr>
+  </table>

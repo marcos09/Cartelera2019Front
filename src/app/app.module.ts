@@ -24,6 +24,8 @@ import { BillboardService } from './services/billboard.service';
 import { BillboardComponent } from './billboard/billboard.component';
 import { UpdateBillboardComponent } from './billboard/update-billboard/update-billboard.component';
 import { PublicationsComponent } from './publications/publications.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { BillboardSubscriptionComponent } from './billboard-subscription/billboard-subscription.component';
 
 export function authHttpServiceFactory(http: Http) {
   return new AuthHttp(new AuthConfig({
@@ -48,6 +50,8 @@ export function authHttpServiceFactory(http: Http) {
     BillboardComponent,
     UpdateBillboardComponent,
     PublicationsComponent,
+    UserDetailsComponent,
+    BillboardSubscriptionComponent,
   ],
   imports: [
     BrowserModule,
