@@ -38,11 +38,11 @@ export class LoginComponent implements OnInit {
             this.userService.login(result);
             this.navigateAfterSuccess();
           } else {
-            this.error = 'Username or password is incorrect';
+            this.error = 'Nombre de usuario o contraseña incorrecta. Intente nuevamente.';
           }
         },
         error => {
-          this.error = 'Username or password is incorrect';
+          this.error = 'Nombre de usuario o contraseña incorrecta. Intente nuevamente.';
           this.loading = false;
         }
       );

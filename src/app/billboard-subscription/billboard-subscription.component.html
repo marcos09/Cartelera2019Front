@@ -1,30 +1,52 @@
-<p>Los botones funcionan, habría que modificar bien los datos utilizados para que las carteleras para suscribir y
-  las suscriptas sean diferentes. En el backend ya está resuelto. </p>
-<h3>Carteleras adheridas</h3>
-<table class="table">
-    <tr>
-      <th>Nombre de la cartelera</th>
-      <th>Acciones</th>
-    </tr>
-      <tr *ngFor="let billboard of billboards">
-        <td>{{billboard.nameBillboard}}</td>
-        <td>
-          <button type="button" class="btn btn-danger" (click)="unsubscription(billboard.id)">Dejar de seguir</button>
-        </td>
-      </tr>
-  </table>
+<div class="p-3 mb-2 bg-warning text-dark">
+	<p>
+		Los botones funcionan, habría que modificar bien los datos utilizados para que las carteleras para suscribir y
+		las suscriptas sean diferentes. En el backend ya está resuelto.
+	</p>
+</div>
 
-<h3> Carteleras sin suscripcion </h3>
-<table class="table">
-    <tr>
-      <th>Nombre de la cartelera</th>
-      <th>Acciones</th>
-    </tr>
 
-      <tr *ngFor="let billboard of billboards">
-        <td>{{billboard.nameBillboard}}</td>
-        <td>
-          <button type="button" class="btn btn-danger" (click)="subscription(billboard.id)">Seguir cartelera</button>
-        </td>
-      </tr>
-  </table>
+<h2 style="margin-top: 1em">Carteleras adheridas</h2>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th scope="col">Cartelera</th>
+			<th scope="col">Acciones</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr *ngFor="let billboard of billboards">
+			<td>{{billboard.nameBillboard}}</td>
+			<td>
+				<button type="button" class="btn btn-link text-danger" (click)="unsubscription(billboard.id)">
+					<i class="cui-thumb-down"></i>
+				</button>
+
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2 style="margin-top: 1em">Carteleras sin Suscripcion</h2>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th scope="col">Cartelera</th>
+			<th scope="col">Acciones</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr *ngFor="let billboard of billboards">
+			<td>{{billboard.nameBillboard}}</td>
+			<td>
+				<button type="button" class="btn btn-link text-success" (click)="subscription(billboard.id)">
+					<i class="cui-thumb-up"></i>
+				</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
