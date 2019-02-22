@@ -1,26 +1,32 @@
 <app-new-billboard></app-new-billboard>
 
-<h3>Listado de carteleras</h3>
-<table class="table">
-  <tr>
-    <th>Nombre de la cartelera</th>
-    <th>Usuarios habilitados</th>
-    <th>Modificar</th>
-    <th>Eliminar</th>
-  </tr>
+<h2>Listado de carteleras</h2>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th scope="col">Nombre de la cartelera</th>
+			<th scope="col">Usuarios habilitados</th>
+			<th scope="col">Modificar</th>
+			<th scope="col">Eliminar</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let billboard of billboards">
+			<td>{{billboard.nameBillboard}}</td>
 
-    <tr *ngFor="let billboard of billboards">
-      <td>{{billboard.nameBillboard}}</td>
-
-      <td>
-        <p *ngFor="let user of billboard.writeUsers">{{user.username}} </p>
-      </td>
-      <td>
-          <button type="button" class="btn btn-warning">Modificar cartelera</button>
-      </td>
-      <td>
-        <button type="button" class="btn btn-danger" (click)="deleteBilllboard(billboard)">Eliminar cartelera</button>
-      </td>
-    </tr>
+			<td>
+				<p *ngFor="let user of billboard.writeUsers">{{user.username}} </p>
+			</td>
+			<td>
+				<button type="button" class="btn btn-link text-warning">
+					<i class="cui-pencil"></i>
+				</button>
+			</td>
+			<td>
+				<button type="button" class="btn btn-link text-danger" (click)="deleteBilllboard(billboard)">
+					<i class="cui-trash"></i>
+				</button>
+			</td>
+		</tr>
+	</tbody>
 </table>
-

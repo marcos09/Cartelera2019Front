@@ -1,20 +1,91 @@
-<h4>Seleccione la cartelera de la que quiere ver las publicaciones</h4>
-
+<h2 style="margin-top: 1em">Seleccione la Cartelera</h2>
 <!--
 <select [(ngModel)]="billboard" (ngModelChange)="refreshPublications()" name="sel2">
     <option [value]="billb" *ngFor="let billb of billboards">{{billb.nameBillboard}}</option>
 </select>
 -->
-
 <form [formGroup]="billboardSelectForm">
 
     <select class="form-group" (ngModelChange)="refreshPublications()" id="billboard" formControlName="billboard">
-        <option *ngFor="let billb of billboards"
-          [ngValue]="billb.id">{{billb.nameBillboard}}
-       </option>
-     </select>
-    </form>
+        <option *ngFor="let billb of billboards" [ngValue]="billb.id">
+            {{billb.nameBillboard}}
+        </option>
+    </select>
 
-<p>JSON recibido del backend</p>
-<pre>{{publications | json}}</pre>
+</form>
 
+<div class="col px-md-2" style="margin-bottom: 1em">
+    <div class="p-3 border bg-light">
+        JSON recibido del backend
+        <pre>{{publications | json}}</pre>
+    </div>
+</div>
+
+<div class="card-columns">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Mesa de Finales</h5>
+            <p class="card-text">Último día de inscripción para la mesa de finales de Febrero '19.</p>
+            <p class="card-text"><small class="text-muted">Hace 5 minutos</small></p>
+        </div>
+    </div>
+
+    <div class="card p-3">
+        <blockquote class="blockquote mb-0 card-body">
+            <p>Los alumnos que estén en condiciones de anotarse a la mesa de finales para firmar la promoción, ingresan 30 minutos más tarde.</p>
+            <footer class="blockquote-footer">
+                <small class="text-muted">
+                    Saludos, buen fin de semana <cite title="Source Title">Prof. Lara</cite>
+                </small>
+            </footer>
+        </blockquote>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Segunda Fecha del Parcial</h5>
+            <p class="card-text">Estimados, el parcial se realizará el lunes 18 a las 15hs. por favor ser puntual.</p>
+            <p class="card-text"><small class="text-muted">Hace 5 días.</small></p>
+        </div>
+    </div>
+
+    <div class="card bg-warning text-white text-center p-3">
+        <blockquote class="blockquote mb-0">
+            <p>Exposición Anual en la  UNLP - Facultad de Informática. Día 7 de marzo del año 2019.</p>
+            <footer class="blockquote-footer">
+                <small>
+                    Quedan todos invitados. Los esperamos! <cite title="Source Title">Decana Patricia</cite>
+                </small>
+            </footer>
+        </blockquote>
+    </div>
+
+    <div class="card text-center">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Hace 12 días</small></p>
+        </div>
+    </div>
+
+    <div class="card p-3 text-right">
+        <blockquote class="blockquote mb-0">
+            <p>Se encuentra abierta la inscripción para el Proyecto de Tesina. Interesados acercarse al laboratorio LIFIA de la facultad de Informática.</p>
+            <footer class="blockquote-footer">
+                <small class="text-muted">
+                    Saludos, contacto jtaus@info.unlp.edu.ar <cite title="Source Title">Johana.</cite>
+                </small>
+            </footer>
+        </blockquote>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Que sueño</h5>
+            <p class="card-text">La puta madre. This is a wider card with supporting text below as a natural lead-in to additional
+                content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text"><small class="text-muted">Hace 3 minutos</small></p>
+        </div>
+    </div>
+
+</div>
